@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const CustomFooter = styled.footer`
+export const FooterContainer = styled.footer`
   padding: 20px 0;
   display: flex;
   align-items: center;
