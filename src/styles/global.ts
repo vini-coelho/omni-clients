@@ -6,7 +6,7 @@ export default createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
   }
-  html, body {
+  html, body, #__next {
     max-height: 100vh;
     max-width: 100vw;
     width: 100%;

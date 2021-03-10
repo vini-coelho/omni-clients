@@ -1,18 +1,18 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 40px;
-  height: 100%;
   background: linear-gradient(100deg, var(--comment) 30%, var(--background) 30%);
 `;
 
 export const Body = styled.div`
   background: var(--white);
   max-width: 500px;
-  height: 100%;
+  flex: 1;
   width: 100%;
   border-radius: 3px;
 

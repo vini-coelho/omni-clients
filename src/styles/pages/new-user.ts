@@ -6,12 +6,11 @@ export const Container = styled.div`
   align-items: center;
   padding-top: 40px;
   height: 100%;
-  background: linear-gradient(-120deg, var(--comment) 25%, var(--background) 25%);
+  background: linear-gradient(-120deg, var(--comment) 20%, var(--background) 20%);
 `;
 
 export const Body = styled.div`
   max-width: 350px;
-  height: 100%;
   width: 100%;
   border-radius: 3px;
 
