@@ -8,13 +8,12 @@ import {
   Name,
   Subtitle,
   Body,
-  Footer
 } from '../styles/pages/new-user';
 
-import { FaGithub } from 'react-icons/fa';
+import UserSchema from "../schema/UserSchema";
 
 import Form, { FormValues } from "../components/Form";
-import UserSchema from "../schema/UserSchema";
+import { CustomFooter } from "../components/CustomFooter";
 
 export default function Home() {
 
@@ -57,16 +56,7 @@ export default function Home() {
           onSubmit={handleSubmit}
         />
       </Body>
-      <Footer>
-        <FaGithub />
-        <a
-          href='http://github.com/vini-coelho'
-          target='_blank'
-          rel='noreferrer'
-        >
-          Made with ♥ by Vinicius Coelho.
-        </a>
-      </Footer>
+      <CustomFooter />
     </Container>
   )
 }

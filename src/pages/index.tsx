@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 
@@ -8,7 +9,6 @@ import {
   Name,
   Subtitle,
   Body,
-  Footer,
   Button,
   UsersListContainer,
   UserItemContainer,
@@ -16,12 +16,12 @@ import {
   UserEmail,
 
 } from '../styles/pages/Home';
-
-import { FaGithub } from 'react-icons/fa';
-import { useEffect, useState } from "react";
-import { User } from "../schema/UserSchema";
 import { MdPlace } from "react-icons/md";
+
+import { User } from "../schema/UserSchema";
+
 import { Loading } from "../components/Loading";
+import { CustomFooter } from "../components/CustomFooter";
 
 export default function Home() {
   const [users, setUsers] = useState([] as User[]);
@@ -88,16 +88,7 @@ export default function Home() {
           <Button>Cadastrar novo usuario</Button>
         </Link>
       </Body>
-      <Footer>
-        <FaGithub />
-        <a
-          href='http://github.com/vini-coelho'
-          target='_blank'
-          rel='noreferrer'
-        >
-          Made with ♥ by Vinicius Coelho.
-        </a>
-      </Footer>
+      <CustomFooter />
     </Container>
   )
 }
