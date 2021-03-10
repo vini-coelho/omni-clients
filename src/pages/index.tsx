@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Formik } from "formik";
+import Link from "next/link";
 
 import api from "../services/api";
 
@@ -7,56 +7,65 @@ import {
   Container,
   Name,
   Subtitle,
-  LinksContainer,
-  Footer
+  Body,
+  Footer,
+  Button,
+  UsersListContainer,
+  UserItemContainer,
+  UserName,
+  UserEmail,
+
 } from '../styles/pages/Home';
 
 import { FaGithub } from 'react-icons/fa';
-
-import Form, { FormValues } from "../components/Form";
-import ClientSchema from "../schema/ClientSchema";
+import { useEffect, useState } from "react";
+import { User } from "../schema/UserSchema";
+import { MdPlace } from "react-icons/md";
 
 export default function Home() {
+  const [users, setUsers] = useState([] as User[]);
 
-  async function handleSubmit(values: FormValues) {
-    console.log(values)
-    try {
-      const response = await api.post('/users', values)
-      console.log(response.data)
-    } catch (err) {
-      console.log(err.message)
+  useEffect(() => {
+    async function getUsers() {
+      const response = await api.get<User[]>('/users');
+
+      setUsers(response.data)
     }
-  }
+    getUsers();
+  }, []);
 
   return (
     <Container>
       <Head>
-        <title>Omni Clients</title>
+        <title>Omni Clients | Home</title>
       </Head>
       <Name>Omni Clients</Name>
-      <Subtitle>Preencha o formulario para cadastrar clientes.</Subtitle>
-      <LinksContainer>
-        <Formik
-          component={Form}
-          initialValues={{
-            email: '',
-            password: '',
-            first_name: '',
-            last_name: '',
-            phone: '',
-            age: null,
-            cep: '',
-            logradouro: '',
-            complemento: '',
-            bairro: '',
-            localidade: '',
-            number: '',
-            uf: ''
-          }}
-          validationSchema={ClientSchema}
-          onSubmit={handleSubmit}
-        />
-      </LinksContainer>
+      <Subtitle>Clientes cadastrados</Subtitle>
+      <Body>
+        <UsersListContainer>
+          {
+            users.map(item => (
+              <UserItemContainer key={item.id}>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${item.logradouro}, ${item.number} - ${item.bairro}, ${item.localidade} - ${item.uf}`}
+                  target='_blank'
+                  rel='noreferrer'>
+                  <MdPlace />
+                </a>
+                <div>
+                  <UserName>{item.first_name} {item.last_name}, {item.age}</UserName>
+                  <UserEmail>{item.email}</UserEmail>
+                  <UserEmail>{item.phone}</UserEmail>
+                </div>
+              </UserItemContainer>
+            ))
+          }
+
+        </UsersListContainer>
+        <Link href='/new-user'>
+          <Button>Cadastrar novo usuario</Button>
+        </Link>
+      </Body>
       <Footer>
         <FaGithub />
         <a
