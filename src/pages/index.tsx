@@ -35,7 +35,7 @@ export default function Home() {
 
         console.log(response.data)
 
-        // setUsers(response.data)
+        setUsers(response.data)
         setLoading(false);
       } catch (err) {
         alert(err)
@@ -60,7 +60,7 @@ export default function Home() {
             :
             <>
               {
-                !users ? (
+                !!users.length ? (
                   users.map(item => (
                     <UserItemContainer key={item.id}>
                       <a
