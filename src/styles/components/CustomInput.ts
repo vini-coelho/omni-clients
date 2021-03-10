@@ -31,8 +31,8 @@ export const Input = styled.input`
 `;
 
 export const InputContainer = styled.div<InputProps>`
-  background: var(--current-line);
-  border: ${p => (p.error ? '1px solid var(--pink)' : '')};
+  background: var(--background);
+  border: ${p => (p.error ? '1px solid var(--red)' : '')};
 
   display: flex;
   align-items: center;

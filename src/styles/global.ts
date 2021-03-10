@@ -33,16 +33,18 @@ export default createGlobalStyle`
   }
 
   :root {
-    --background:#282a36;
-    --current-line: #44475a;
-    --foreground:#f8f8f2;
-    --comment:#6272a4;
-    --cyan:#8be9fd;
-    --green:#50fa7b;
-    --orange:#ffb86c;
-    --pink:#ff79c6;
-    --purple:#bd93f9;
-    --red:#ff5555;
-    --yellow:#f1fa8c;
+    --background:	#191622;
+    --foreground: #E1E1E6;
+    --current-line:	#44475a;
+    --selection:	#41414D;
+    --comment:	#483C67;
+    --cyan: #78D1E1;
+    --green:	#67E480;
+    --orange:	#E89E64;
+    --pink:	#FF79C6;
+    --purple:	#988BC7;
+    --red:	#E96379;
+    --yellow:	#E7DE79;
   }
 `;
+

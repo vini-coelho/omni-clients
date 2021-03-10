@@ -6,12 +6,12 @@ export const Container = styled.div`
   align-items: center;
   padding-top: 40px;
   height: 100%;
-  /* background: var(--green); */
+  background: linear-gradient(100deg, var(--comment) 30%, var(--background) 30%);
 `;
 
-export const LinksContainer = styled.div`
+export const Body = styled.div`
   background: var(--white);
-  max-width: 350px;
+  max-width: 500px;
   height: 100%;
   width: 100%;
   border-radius: 3px;
@@ -21,8 +21,6 @@ export const LinksContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  /* background: var(--pink); */
 
   animation-name: first;
   animation-duration: 600ms;
@@ -47,46 +45,17 @@ export const Name = styled.h2`
 
 export const Subtitle = styled.span`
   margin-bottom: 20px;
-  /* font-weight: bold; */
   color: var(--foreground);
   animation-name: first;
   animation-duration: 600ms;
   animation-timing-function: ease-in-out;
 `;
 
-export const LinkCard = styled.button`
-  padding: 20px;
-  border-radius: 5px;
-  margin-bottom: 10px;
-  width: 100%;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  background: var(--current-line);
-
-  span {
-    font-size: 1rem;
-    color: var(--pink);
-    font-weight: 500;
-  }
-  &:focus {
-    outline: 0;
-  }
-  &:hover {
-    opacity: 80%;
-    cursor: pointer;
-  }
-`;
-
 export const Footer = styled.footer`
   padding: 20px 0;
   display: flex;
   align-items: center;
-  /* position: fixed; */
   bottom: 0;
-  /* background: var(--orange); */
   a {
     font-family: 'Roboto';
     font-size: 1.4rem;
@@ -101,3 +70,85 @@ export const Footer = styled.footer`
     width: 30px;
   }
 `;
+
+export const Button = styled.button`
+  outline: none;
+  background: var(--comment);
+  color: var(--foreground);
+  font-size: 1.4rem;
+  font-weight: 600;
+  font-family: 'Montserrat';
+  width: 100%;
+  height: 45px;
+  border-radius: 0.4rem;
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+    background: var(--comment)
+  }
+`;
+
+export const UsersListContainer = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const UserItemContainer = styled.div`
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  background-color: var(--selection);
+  border-radius: 0.5rem;
+
+  padding: 20px 30px;
+  margin-bottom: 10px;
+
+  box-shadow: 2px 2px rgba(0, 0, 0, 0.2);
+  transition: border 200ms ease-in-out;
+
+  border: 1px solid rgba(0,0,0,0);
+
+  &:hover {
+    border: 1px solid var(--green);
+  }
+
+  & > div {
+    display:flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  svg {
+    fill: var(--foreground);
+    height: 50px;
+    width: 50px;
+    background-color: var(--orange);
+    border-radius: 50%;
+    padding: 10px;
+    margin-right: 15px;
+  }
+`;
+
+export const UserName = styled.span`
+  font-weight: bold;
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 5px;
+`;
+
+export const UserEmail = styled.span`
+  font-weight: 400;
+  font-size: 1.4rem;
+  color: #fff;
+  margin-bottom: 5px;
+`;
+

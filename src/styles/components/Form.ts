@@ -5,8 +5,10 @@ interface InputProps {
 }
 
 export const Form = styled.form`
-  background: var(--background);
-  width: 450px;
+  background: var(--selection);
+  width: 490px;
+  padding: 20px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -67,8 +69,8 @@ export const Label = styled.span``;
 
 export const Button = styled.button`
   outline: none;
-  background: var(--pink);
   color: var(--foreground);
+  background: var(--comment);
   font-size: 1.4rem;
   font-weight: 600;
   font-family: 'Montserrat';
@@ -82,8 +84,10 @@ export const Button = styled.button`
   justify-content: center;
   cursor: pointer;
 
+  transition: all 200ms ease-in-out;
+
   &:disabled {
     cursor: not-allowed;
-    background: var(--comment)
+    background: var(--red);
   }
 `;
