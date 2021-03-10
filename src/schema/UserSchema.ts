@@ -2,6 +2,25 @@ import * as Yup from 'yup';
 
 const phoneRegex = /^(\([0-9]{2}\) [9][0-9]{4}-[0-9]{4})|(\(1[2-9]\) [5-9][0-9]{3}-[0-9]{4})|(\([2-9][1-9]\) [5-9][0-9]{3}-[0-9]{4})$/
 
+export interface User {
+  id: number;
+  first_name: string;
+  last_name: string;
+  age: number;
+  email: string;
+  password: string;
+  phone: string;
+  cep: string;
+  logradouro: string;
+  complemento: string;
+  number: string;
+  bairro: string;
+  localidade: string;
+  uf: string;
+  created_at: Date;
+  updated_at: Date;
+}
+
 export default Yup.object().shape({
   first_name: Yup
     .string()
@@ -53,44 +72,3 @@ export default Yup.object().shape({
     .test(value => phoneRegex.test(value))
     .required()
 });
-
-/*
-@Column()
-  first_name: string;
-
-  @Column()
-  last_name: string;
-
-  @Column()
-  age: number;
-
-  @Column()
-  email: string;
-
-  @Column()
-  password: string;
-
-  @Column()
-  phone: string;
-
-  @Column()
-  cep: string;
-
-  @Column()
-  logradouro: string;
-
-  @Column({ nullable: true })
-  complemento: string;
-
-  @Column()
-  number: string;
-
-  @Column()
-  bairro: string;
-
-  @Column()
-  localidade: string;
-
-  @Column()
-  uf: string;
-*/
