@@ -39,10 +39,10 @@ No seu Terminal ou Console, siga os passos:
 
 ```bash
 # Clone este repositório
-$ git clone https://github.com/vini-coelho/omni-clients-react
+$ git clone https://github.com/vini-coelho/omni-clients
 
 # Entre no repositório
-$ cd omni-clients-react
+$ cd omni-clients
 
 # Instale as dependências
 $ yarn install
